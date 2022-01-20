@@ -3,9 +3,13 @@ agent any
 environment {
 AWS_ACCOUNT_ID="723959547348"
 AWS_DEFAULT_REGION="us-west-1"
-IMAGE_REPO_NAME="arun-test-pipeline"
-IMAGE_TAG="latest"
 REPOSITORY_URI = "${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com/${IMAGE_REPO_NAME}"
+CLUSTER_NAME="jenkins-test-repo"
+SERVICE_NAME="jenkins-test-repo"
+TASK_DEFINITION_NAME="jenkins-test-repo"
+DESIRED_COUNT="2"
+IMAGE_REPO_NAME="jenkins-test-repo"
+IMAGE_TAG="${env.BUILD_ID}"
 registryCredential = "demo-admin-user"
 }
 
